@@ -1,0 +1,23 @@
+@import "../../styles/variables.scss";
+
+$blockName: ".search";
+
+#{$blockName} {
+  height: 48px;
+  &__input {
+    padding-left: 40px;
+    border: 1px solid $light-grey;
+    border-radius: 4px;
+    z-index: 2;
+    cursor: pointer;
+    height: 48px;
+    width: 334px;
+  }
+  &__icon {
+    position: absolute;
+    margin-top: 13px;
+    margin-left: 16px;
+    width: 18px;
+    height: 20px;
+  }
+}

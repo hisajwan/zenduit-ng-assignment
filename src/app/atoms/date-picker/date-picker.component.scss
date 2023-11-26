@@ -1,0 +1,29 @@
+@import "../../styles/variables.scss";
+
+$blockName: ".date-picker";
+
+#{$blockName} {
+  height: 48px;
+  &__input {
+    padding-left: 40px;
+    border: 1px solid $light-grey;
+    border-radius: 4px;
+    z-index: 2;
+    cursor: pointer;
+    height: 48px;
+    width: 209px;
+  }
+  &__input::-webkit-calendar-picker-indicator {
+    background: transparent;
+    cursor: pointer;
+    position: absolute;
+    width: 100px;
+  }
+  &__icon {
+    position: absolute;
+    margin-top: 13px;
+    margin-left: 16px;
+    width: 18px;
+    height: 20px;
+  }
+}

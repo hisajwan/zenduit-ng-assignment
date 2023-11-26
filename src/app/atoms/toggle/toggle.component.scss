@@ -1,0 +1,17 @@
+@import "../../styles/variables.scss";
+
+$blockName: ".tabs";
+
+#{$blockName} {
+  border-radius: 4px;
+  border: 2px solid $light-grey;
+  background: var(--color-white, #fff);
+  cursor: pointer;
+  &__item {
+    padding: 16px 26px;
+  }
+  .active {
+    background-color: $light-blue;
+    color: white;
+  }
+}

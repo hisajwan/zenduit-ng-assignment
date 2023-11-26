@@ -3,9 +3,12 @@
   <span class="{{ blockName }}__spacer"></span>
   <ng-container *ngFor="let item of itemsList">
     <div
+      role="button"
+      tabindex="0"
       class="{{ blockName }}__tab d-flex align-items-center px-3"
       [ngClass]="{ active: item?.isActive }"
       (click)="redirectTo(item)"
+      (keyup)="redirectTo(item)"
     >
       <mat-icon>{{ item.icon }}</mat-icon>
       <span>{{ item?.label }}</span>

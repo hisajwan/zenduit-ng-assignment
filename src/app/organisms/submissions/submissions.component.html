@@ -1,19 +1,31 @@
 <h2 class="{{ blockName }}">Submissions</h2>
-<div class="{{ blockName }}__form d-flex">
-  <div class="{{ blockName }}__left-side d-flex">
-    <app-search></app-search>
-    <app-select></app-select>
-    <app-select></app-select>
-    <app-date-picker></app-date-picker>
+<div
+  class="{{
+    blockName
+  }}__form d-flex align-items-center justify-content-between"
+>
+  <div class="{{ blockName }}__left-side d-flex align-items-center">
+    <app-search (search)="handleSearch($event)"></app-search>
+    <app-select
+      placeholder="Select Form"
+      (selection)="handleSelect($event)"
+    ></app-select>
+    <app-select
+      placeholder="Select Status"
+      (selection)="handleSelect($event)"
+    ></app-select>
+    <app-date-picker (dateChange)="handleDateChange($event)"></app-date-picker>
   </div>
-  <div class="{{ blockName }}__right-side d-flex">
-    <app-toggle></app-toggle>
-    <app-export (onExport)="handleExport($event)"></app-export>
+  <div class="{{ blockName }}__right-side d-flex align-items-center">
+    <app-toggle (toggle)="handleTabchange($event)"></app-toggle>
+    <app-export (export)="handleExport($event)"></app-export>
   </div>
 </div>
-<div class="d-flex">
+<div class="d-flex align-items-first">
   <div class="{{ blockName }}__items">
-    <app-card></app-card>
+    <ng-container *ngFor="let submission of submissionsData">
+      <app-card [data]="submission"></app-card>
+    </ng-container>
   </div>
-  <app-map></app-map>
+  <app-map [data]="submissionsData"></app-map>
 </div>

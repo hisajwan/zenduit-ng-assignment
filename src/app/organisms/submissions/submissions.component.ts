@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MOCK_DATA } from '../../utils/mocks';
+import { SubmissionsType } from '../../models';
 
 @Component({
   selector: 'app-submissions',
@@ -6,9 +8,26 @@ import { Component } from '@angular/core';
   styleUrl: './submissions.component.scss',
 })
 export class SubmissionsComponent {
-  blockName = 'submissions';
+  blockName: string = 'submissions';
+  submissionsData: SubmissionsType[] = MOCK_DATA;
 
-  handleExport(event: any) {
-    alert('Exported');
+  handleSearch($event: string) {
+    console.log(`Search`, $event);
+  }
+
+  handleSelect($event: string) {
+    console.log('Selected', $event);
+  }
+
+  handleExport($event: string) {
+    console.log('Exported', $event);
+  }
+
+  handleDateChange($event: string) {
+    console.log('Date Selected', $event);
+  }
+
+  handleTabchange($event: string) {
+    console.log(`selected`, $event);
   }
 }

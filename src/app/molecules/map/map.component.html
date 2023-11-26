@@ -1,1 +1,16 @@
-<p>map works!</p>
+<div class="map">
+  <google-map
+    height="730px"
+    width="1100px"
+    [center]="center"
+    [zoom]="zoom"
+    [options]="options"
+  >
+    <map-marker
+      *ngFor="let marker of markers"
+      [position]="marker.position"
+      [options]="marker.options"
+    >
+    </map-marker>
+  </google-map>
+</div>
