@@ -1,5 +1,5 @@
 <div class="{{ blockName }}">
-  <select class="{{ blockName }}__input" (change)="this.onSelect.emit()">
+  <select class="{{ blockName }}__input" (change)="this.selection.emit()">
     <option disabled selected value="">{{ placeholder }}</option>
     <option *ngFor="let option of options" [value]="option?.id">
       {{ option?.label }}

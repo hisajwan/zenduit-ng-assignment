@@ -7,5 +7,5 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class ExportComponent {
   blockName = 'export';
-  @Output() onExport = new EventEmitter<string>();
+  @Output() export = new EventEmitter<string>();
 }

@@ -7,5 +7,5 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class SearchComponent {
   blockName = 'search';
-  @Output() onSearch = new EventEmitter<string>();
+  @Output() search = new EventEmitter<string>();
 }

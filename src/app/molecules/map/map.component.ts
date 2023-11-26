@@ -8,7 +8,10 @@ import { SubmissionsType } from '../../models';
 })
 export class MapComponent implements OnInit {
   @Input() data: SubmissionsType[] | undefined;
-  markers = [] as any;
+  markers = [] as Array<{
+    position: { lat: number; lng: number };
+    options: { icon: string; animation: google.maps.Animation };
+  }>;
   center: google.maps.LatLngLiteral = { lat: 29, lng: 80 };
   zoom = 8;
   options: google.maps.MapOptions = {

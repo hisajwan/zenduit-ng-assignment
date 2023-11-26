@@ -14,5 +14,5 @@ export class SelectComponent {
   blockName = 'select';
   @Input() placeholder: string = 'Select';
   @Input() options: Options[] = [];
-  @Output() onSelect = new EventEmitter<string>();
+  @Output() selection = new EventEmitter<string>();
 }

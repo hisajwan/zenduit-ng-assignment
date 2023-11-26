@@ -7,5 +7,5 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class DatePickerComponent {
   blockName = 'date-picker';
-  @Output() onDateChange = new EventEmitter<string>();
+  @Output() dateChange = new EventEmitter<string>();
 }

@@ -11,23 +11,23 @@ export class SubmissionsComponent {
   blockName: string = 'submissions';
   submissionsData: SubmissionsType[] = MOCK_DATA;
 
-  handleSearch($event: any) {
-    console.log('Search');
+  handleSearch($event: string) {
+    console.log(`Search`, $event);
   }
 
-  handleSelect($event: any) {
-    console.log('Selected');
+  handleSelect($event: string) {
+    console.log('Selected', $event);
   }
 
-  handleExport(event: any) {
-    console.log('Exported');
+  handleExport($event: string) {
+    console.log('Exported', $event);
   }
 
-  handleDateChange(event: any) {
-    console.log('Date Selected');
+  handleDateChange($event: string) {
+    console.log('Date Selected', $event);
   }
 
-  handleTabchange(event: any) {
-    console.log(`${event} selected`);
+  handleTabchange($event: string) {
+    console.log(`selected`, $event);
   }
 }

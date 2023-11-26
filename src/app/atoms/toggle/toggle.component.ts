@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { TOGGLE_TABS } from '../../utils/constants/toggle';
 
 type Tab = {
@@ -13,7 +13,7 @@ type Tab = {
   styleUrl: './toggle.component.scss',
 })
 export class ToggleComponent {
-  @Output() onToggle = new EventEmitter<string>();
+  @Output() toggle = new EventEmitter<string>();
 
   blockName = 'tabs';
   tabs: Tab[] = TOGGLE_TABS;
@@ -23,6 +23,6 @@ export class ToggleComponent {
       ...list,
       isActive: list.id === tab.id,
     }));
-    this.onToggle.emit(tab.id);
+    this.toggle.emit(tab.id);
   }
 }
