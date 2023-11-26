@@ -1,0 +1,28 @@
+@import "../../styles/variables.scss";
+
+$blockName: ".nav";
+
+#{$blockName} {
+  display: flex;
+  gap: 16px;
+  height: 72px;
+  padding: 0 32px;
+  background: $light-blue;
+  &__title {
+    font-size: 32px;
+  }
+  &__spacer {
+    flex: 1 1 auto;
+  }
+  &__tab {
+    display: flex;
+    gap: 8px;
+    height: 100%;
+    :hover {
+      cursor: pointer;
+    }
+  }
+  .active {
+    background: $dark-blue;
+  }
+}

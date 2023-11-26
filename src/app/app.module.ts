@@ -14,7 +14,9 @@ import { NavigationComponent } from './molecules/navigation/navigation.component
 import { SubmissionsComponent } from './organisms/submissions/submissions.component';
 import { PageNotFoundComponent } from './organisms/page-not-found/page-not-found.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,15 +28,18 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MapComponent,
     NavigationComponent,
     SubmissionsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     GoogleMapsModule,
-    NgbModule
+    NgbModule,
+    MatIconModule,
+    MatToolbarModule,
+    BrowserAnimationsModule,
   ],
   providers: [GoogleMap],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
