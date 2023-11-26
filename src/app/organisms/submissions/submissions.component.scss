@@ -1,0 +1,18 @@
+$blockName: ".submissions";
+
+#{$blockName} {
+  margin-bottom: 26px;
+  &__form {
+    gap: 124px;
+    margin-bottom: 36px;
+  }
+  &__left-side {
+    gap: 40px;
+  }
+  &__right-side {
+    gap: 24px;
+  }
+  &__items {
+    margin-right: 40px;
+  }
+}
