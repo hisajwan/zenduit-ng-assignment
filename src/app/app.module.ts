@@ -13,6 +13,7 @@ import { MapComponent } from './molecules/map/map.component';
 import { NavigationComponent } from './molecules/navigation/navigation.component';
 import { SubmissionsComponent } from './organisms/submissions/submissions.component';
 import { PageNotFoundComponent } from './organisms/page-not-found/page-not-found.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PageNotFoundComponent } from './organisms/page-not-found/page-not-found
   imports: [
     BrowserModule,
     AppRoutingModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    NgbModule
   ],
   providers: [GoogleMap],
   bootstrap: [AppComponent]
