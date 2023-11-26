@@ -1,0 +1,19 @@
+<h2 class="{{ blockName }}">Submissions</h2>
+<div class="{{ blockName }}__form d-flex">
+  <div class="{{ blockName }}__left-side d-flex">
+    <app-search></app-search>
+    <app-select></app-select>
+    <app-select></app-select>
+    <app-date-picker></app-date-picker>
+  </div>
+  <div class="{{ blockName }}__right-side d-flex">
+    <app-toggle></app-toggle>
+    <app-export (onExport)="handleExport($event)"></app-export>
+  </div>
+</div>
+<div class="d-flex">
+  <div class="{{ blockName }}__items">
+    <app-card></app-card>
+  </div>
+  <app-map></app-map>
+</div>

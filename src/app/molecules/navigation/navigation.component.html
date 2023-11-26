@@ -1,0 +1,17 @@
+<mat-toolbar class="{{ blockName }}" color="primary">
+  <span class="{{ blockName }}__title">ZenduForms</span>
+  <span class="{{ blockName }}__spacer"></span>
+  <ng-container *ngFor="let item of itemsList">
+    <div
+      class="{{ blockName }}__tab d-flex align-items-center px-3"
+      [ngClass]="{ active: item?.isActive }"
+      (click)="redirectTo(item)"
+    >
+      <mat-icon>{{ item.icon }}</mat-icon>
+      <span>{{ item?.label }}</span>
+    </div>
+  </ng-container>
+  <span class="{{ blockName }}__spacer"></span>
+  <mat-icon class="mr-2">notifications</mat-icon>
+  <mat-icon>logout</mat-icon>
+</mat-toolbar>
