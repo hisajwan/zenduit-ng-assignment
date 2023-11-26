@@ -16,6 +16,11 @@ import { PageNotFoundComponent } from './organisms/page-not-found/page-not-found
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSelectModule } from '@angular/material/select';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ExportComponent } from './atoms/export/export.component';
 @NgModule({
@@ -40,6 +45,11 @@ import { ExportComponent } from './atoms/export/export.component';
     MatIconModule,
     MatToolbarModule,
     BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatButtonToggleModule,
+    MatNativeDateModule,
   ],
   providers: [GoogleMap],
   bootstrap: [AppComponent],

@@ -8,7 +8,23 @@ import { Component } from '@angular/core';
 export class SubmissionsComponent {
   blockName = 'submissions';
 
+  handleSearch($event: any) {
+    console.log('Search');
+  }
+
+  handleSelect($event: any) {
+    console.log('Selected');
+  }
+
   handleExport(event: any) {
-    alert('Exported');
+    console.log('Exported');
+  }
+
+  handleDateChange(event: any) {
+    console.log('Date Selected');
+  }
+
+  handleTabchange(event: any) {
+    console.log(`${event} selected`);
   }
 }

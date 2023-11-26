@@ -1,0 +1,25 @@
+@import "../../styles/variables.scss";
+
+$blockName: ".select";
+
+#{$blockName} {
+  height: 48px;
+  &__input {
+    padding: 13.5px 0px 13.5px 16px;
+    height: 48px;
+    width: 209px;
+    border: 1px solid $light-grey;
+    border-radius: 4px;
+    color: $black;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  &__icon {
+    position: absolute;
+    margin-top: 14px;
+    margin-left: -35px;
+    width: 24px;
+    height: 24px;
+  }
+}

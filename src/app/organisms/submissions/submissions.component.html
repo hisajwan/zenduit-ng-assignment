@@ -1,17 +1,29 @@
 <h2 class="{{ blockName }}">Submissions</h2>
-<div class="{{ blockName }}__form d-flex">
-  <div class="{{ blockName }}__left-side d-flex">
-    <app-search></app-search>
-    <app-select></app-select>
-    <app-select></app-select>
-    <app-date-picker></app-date-picker>
+<div
+  class="{{
+    blockName
+  }}__form d-flex align-items-center justify-content-between"
+>
+  <div class="{{ blockName }}__left-side d-flex align-items-center">
+    <app-search (onSearch)="handleSearch($event)"></app-search>
+    <app-select
+      placeholder="Select Form"
+      (onSelect)="handleSelect($event)"
+    ></app-select>
+    <app-select
+      placeholder="Select Status"
+      (onSelect)="handleSelect($event)"
+    ></app-select>
+    <app-date-picker
+      (onDateChange)="handleDateChange($event)"
+    ></app-date-picker>
   </div>
-  <div class="{{ blockName }}__right-side d-flex">
-    <app-toggle></app-toggle>
+  <div class="{{ blockName }}__right-side d-flex align-items-center">
+    <app-toggle (onToggle)="handleTabchange($event)"></app-toggle>
     <app-export (onExport)="handleExport($event)"></app-export>
   </div>
 </div>
-<div class="d-flex">
+<div class="d-flex align-items-center">
   <div class="{{ blockName }}__items">
     <app-card></app-card>
   </div>

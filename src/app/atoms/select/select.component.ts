@@ -1,10 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+
+type Options = {
+  id: string;
+  label: string;
+};
 
 @Component({
   selector: 'app-select',
   templateUrl: './select.component.html',
-  styleUrl: './select.component.scss'
+  styleUrl: './select.component.scss',
 })
 export class SelectComponent {
-
+  blockName = 'select';
+  @Input() placeholder: string = 'Select';
+  @Input() options: Options[] = [];
+  @Output() onSelect = new EventEmitter<string>();
 }

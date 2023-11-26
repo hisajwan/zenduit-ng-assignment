@@ -1,1 +1,11 @@
-<p>toggle works!</p>
+<div class="{{ blockName }} d-flex">
+  <ng-container *ngFor="let tab of tabs">
+    <div
+      class="{{ blockName }}__item"
+      [ngClass]="{ active: tab.isActive }"
+      (click)="handleToggle(tab)"
+    >
+      {{ tab.label }}
+    </div>
+  </ng-container>
+</div>

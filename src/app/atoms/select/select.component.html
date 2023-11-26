@@ -1,1 +1,9 @@
-<p>select works!</p>
+<div class="{{ blockName }}">
+  <select class="{{ blockName }}__input" (change)="this.onSelect.emit()">
+    <option disabled selected value="">{{ placeholder }}</option>
+    <option *ngFor="let option of options" [value]="option?.id">
+      {{ option?.label }}
+    </option>
+  </select>
+  <img src="assets/icons/caret.svg" alt="" class="{{ blockName }}__icon" />
+</div>
