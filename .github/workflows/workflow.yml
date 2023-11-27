@@ -19,10 +19,10 @@ jobs:
 
       - name: Install and build
         working-directory: ./zenduit-ng-assignment
-        run: npm install && npm run build:prod && cp dist/browser/index.html
+        run: npm install && npm run build:prod && cp dist/zenduit-ng-assignment/index.html
       
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
           branch: gh-pages # The branch the action should deploy to.
-          folder: zenduit-ng-assignment/dist/zenduit-ng-assignment # The folder the action should deploy.        
+          folder: zenduit-ng-assignment/dist # The folder the action should deploy.        
