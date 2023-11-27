@@ -19,7 +19,7 @@ jobs:
 
       - name: Install and build
         working-directory: ./zenduit-ng-assignment
-        run: npm install && npm run build:prod && cp docs/browser/index.html
+        run: npm install && npm run build:prod && cp dist/browser/index.html
       
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.1
