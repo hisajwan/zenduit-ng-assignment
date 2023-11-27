@@ -43,7 +43,7 @@ export class MapComponent implements OnInit {
             lng: marker.lng,
           },
           options: {
-            icon: '../assets/icons/marker.svg',
+            icon: 'assets/icons/marker.svg',
             animation: google.maps.Animation.DROP,
           },
         });
