@@ -3,9 +3,8 @@
 $blockName: ".nav";
 
 #{$blockName} {
-  display: flex;
   gap: 16px;
-  height: 72px;
+  height: $nav-height;
   padding: 0 32px;
   background: $light-blue;
   &__title {

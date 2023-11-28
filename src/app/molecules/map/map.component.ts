@@ -13,7 +13,7 @@ export class MapComponent implements OnInit {
     options: { icon: string; animation: google.maps.Animation };
   }>;
   center: google.maps.LatLngLiteral = { lat: 29, lng: 80 };
-  zoom = 8;
+  zoom = 6;
   options: google.maps.MapOptions = {
     mapTypeId: 'terrain',
     zoomControl: true,

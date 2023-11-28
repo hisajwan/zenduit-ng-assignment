@@ -1,21 +1,50 @@
 $blockName: ".submissions";
 
+$submission-items-width: 459px;
+$submission-items-to-map-gap: 40px;
+
 #{$blockName} {
-  margin-bottom: 26px;
+  max-height: 100vh;
+  &__header {
+    margin-bottom: 26px;
+  }
   &__form {
-    gap: 124px;
+    gap: 40px;
     margin-bottom: 36px;
   }
   &__left-side {
     gap: 40px;
+    > * {
+      flex: 1;
+    }
+    app-search {
+      min-width: 334px;
+    }
+    app-select {
+      min-width: 209px;
+    }
+    app-date-picker {
+      min-width: 209px;
+    }
   }
   &__right-side {
     gap: 24px;
   }
+
   &__items {
+    &-container {
+      gap: $submission-items-to-map-gap;
+    }
+    flex: 1;
+    min-width: $submission-items-width;
     display: flex;
     flex-direction: column;
     gap: 8px;
-    margin-right: 40px;
+  }
+  &__map {
+    flex: 1;
+    min-width: calc(
+      100% - $submission-items-width - $submission-items-to-map-gap
+    );
   }
 }
