@@ -1,5 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  QueryList,
+  ViewChildren,
+} from '@angular/core';
 import { SubmissionsType } from '../../models';
+import { MapInfoWindow, MapMarker } from '@angular/google-maps';
 
 @Component({
   selector: 'app-map',
@@ -8,7 +15,11 @@ import { SubmissionsType } from '../../models';
 })
 export class MapComponent implements OnInit {
   @Input() data: SubmissionsType[] | undefined;
+  @ViewChildren(MapInfoWindow) infoWindowsView:
+    | QueryList<MapInfoWindow>
+    | undefined;
   markers = [] as Array<{
+    data: SubmissionsType;
     position: { lat: number; lng: number };
     options: { icon: string; animation: google.maps.Animation };
   }>;
@@ -33,11 +44,25 @@ export class MapComponent implements OnInit {
       : this.center;
   }
 
+  openInfoWindow(marker: MapMarker, windowIndex: number) {
+    let currentIndex = 0;
+    this.infoWindowsView?.forEach((window: MapInfoWindow) => {
+      if (windowIndex === currentIndex) {
+        window.open(marker);
+        currentIndex++;
+      } else {
+        window.close();
+        currentIndex++;
+      }
+    });
+  }
+
   setMarkers() {
     return (
       this.data &&
       this.data.forEach((marker) => {
         this.markers.push({
+          data: marker,
           position: {
             lat: marker.lat,
             lng: marker.lng,

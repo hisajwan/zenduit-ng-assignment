@@ -6,9 +6,14 @@
   [options]="options"
 >
   <map-marker
-    *ngFor="let marker of markers"
+    #somemarker="mapMarker"
+    *ngFor="let marker of markers; let i = index"
     [position]="marker.position"
     [options]="marker.options"
+    (mapClick)="openInfoWindow(somemarker, i)"
   >
+    <map-info-window>
+      <app-card [data]="marker.data"></app-card>
+    </map-info-window>
   </map-marker>
 </google-map>
