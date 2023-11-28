@@ -4,6 +4,7 @@
   [center]="center"
   [zoom]="zoom"
   [options]="options"
+  (mapClick)="handleMapClick()"
 >
   <map-marker
     #somemarker="mapMarker"

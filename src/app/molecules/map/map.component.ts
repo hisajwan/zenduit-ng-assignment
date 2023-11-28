@@ -44,6 +44,12 @@ export class MapComponent implements OnInit {
       : this.center;
   }
 
+  handleMapClick() {
+    this.infoWindowsView?.forEach((window: MapInfoWindow) => {
+      window.close();
+    });
+  }
+
   openInfoWindow(marker: MapMarker, windowIndex: number) {
     let currentIndex = 0;
     this.infoWindowsView?.forEach((window: MapInfoWindow) => {

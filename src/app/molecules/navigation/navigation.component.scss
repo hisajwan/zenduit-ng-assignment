@@ -4,22 +4,27 @@ $blockName: ".nav";
 
 #{$blockName} {
   gap: 16px;
-  height: $nav-height;
+  min-height: $nav-height;
+  height: max-content;
   padding: 0 32px;
   background: $light-blue;
   &__title {
     font-size: 32px;
   }
-  &__spacer {
-    flex: 1 1 auto;
+  &__items {
+    gap: 16px;
   }
   &__tab {
     display: flex;
     gap: 8px;
     height: 100%;
+    min-height: $nav-height;
     :hover {
       cursor: pointer;
     }
+  }
+  &__icons {
+    gap: 16px;
   }
   .active {
     background: $dark-blue;

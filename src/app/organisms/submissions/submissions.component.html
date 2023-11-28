@@ -19,7 +19,9 @@
         (dateChange)="handleDateChange($event)"
       ></app-date-picker>
     </div>
-    <div class="{{ blockName }}__right-side d-flex align-items-center">
+    <div
+      class="{{ blockName }}__right-side d-flex align-items-center flex-wrap"
+    >
       <app-toggle (toggle)="handleTabchange($event)"></app-toggle>
       <app-export (export)="handleExport($event)"></app-export>
     </div>

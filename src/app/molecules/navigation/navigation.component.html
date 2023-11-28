@@ -1,20 +1,29 @@
-<mat-toolbar class="{{ blockName }} d-flex" color="primary">
+<mat-toolbar
+  class="{{
+    blockName
+  }} d-flex flex-column flex-lg-row flex-wrap justify-content-between"
+  color="primary"
+>
   <span class="{{ blockName }}__title">ZenduForms</span>
-  <span class="{{ blockName }}__spacer"></span>
-  <ng-container *ngFor="let item of itemsList">
-    <div
-      role="button"
-      tabindex="0"
-      class="{{ blockName }}__tab d-flex align-items-center px-3"
-      [ngClass]="{ active: item?.isActive }"
-      (click)="redirectTo(item)"
-      (keyup)="redirectTo(item)"
-    >
-      <mat-icon>{{ item.icon }}</mat-icon>
-      <span>{{ item?.label }}</span>
-    </div>
-  </ng-container>
-  <span class="{{ blockName }}__spacer"></span>
-  <mat-icon class="mr-2">notifications</mat-icon>
-  <mat-icon>logout</mat-icon>
+  <div class="{{ blockName }}__items d-flex flex-wrap justify-content-between">
+    <ng-container *ngFor="let item of itemsList">
+      <div
+        role="button"
+        tabindex="0"
+        class="{{ blockName }}__tab d-flex align-items-center px-3"
+        [ngClass]="{ active: item?.isActive }"
+        (click)="redirectTo(item)"
+        (keyup)="redirectTo(item)"
+      >
+        <mat-icon>{{ item.icon }}</mat-icon>
+        <span>{{ item?.label }}</span>
+      </div>
+    </ng-container>
+  </div>
+  <div
+    class="{{ blockName }}__icons d-flex flex-wrap justify-content-between py-3"
+  >
+    <mat-icon class="mr-2">notifications</mat-icon>
+    <mat-icon>logout</mat-icon>
+  </div>
 </mat-toolbar>
