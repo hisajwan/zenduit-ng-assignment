@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavItemsList } from '../../models';
 import { NAVIGATION_LIST } from '../../utils/constants/navigation';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
@@ -11,15 +11,23 @@ import { Router } from '@angular/router';
 export class NavigationComponent {
   blockName = 'nav';
   title = 'ZenduForms';
+  selectedItem: NavItemsList | undefined;
   itemsList: NavItemsList[] = NAVIGATION_LIST;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    this.router.events.subscribe((val) => {
+      if (val instanceof NavigationEnd) {
+        this.itemsList = NAVIGATION_LIST.map((list) => ({
+          ...list,
+          isActive:
+            val.url.includes(list.path) || list.id === this.selectedItem?.id,
+        }));
+      }
+    });
+  }
 
   redirectTo(item: NavItemsList) {
-    this.itemsList = NAVIGATION_LIST.map((list) => ({
-      ...list,
-      isActive: list.id === item.id,
-    }));
+    this.selectedItem = item;
     this.router.navigate([item.path]);
   }
 }

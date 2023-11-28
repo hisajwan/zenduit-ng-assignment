@@ -1,7 +1,10 @@
+@import "./styles/variables.scss";
+
 $blockName: ".app";
 
 #{$blockName} {
   &__router-outlet {
     padding: 36px 32px;
+    max-height: calc(100vh - $nav-height);
   }
 }

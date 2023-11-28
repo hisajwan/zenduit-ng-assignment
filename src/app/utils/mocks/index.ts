@@ -16,7 +16,7 @@ export const MOCK_DATA: SubmissionsType[] = [
     to: 'denisgordiyenya@gmail.com',
     dueDate: '18/12/2023',
     status: StatusType.LOW_RISK,
-    lat: 32.234,
+    lat: 26.234,
     lng: 87.34,
   },
   {
@@ -25,7 +25,7 @@ export const MOCK_DATA: SubmissionsType[] = [
     to: 'denisgordiyenya@gmail.com',
     dueDate: '22/12/2023',
     status: StatusType.NEEDS_REVIEW,
-    lat: 311.234,
+    lat: 25.234,
     lng: 85.234,
   },
   {
